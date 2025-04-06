@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weekly Goal Tracker</title>
+    <style rel="stylesheet" href="style.css"></style>
+  </head>
+  <body>
+    <h1>Daily Goals Tracker</h1>
+
+    <div class="stats">
+      <div class="stat-box">
+        <div class="stat-value" id="total-goals">0</div>
+        <div class="stat-label">Total Goals</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-value" id="completed-goals">0</div>
+        <div class="stat-label">Completed</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-value" id="completion-percentage">0%</div>
+        <div class="stat-label">Completion Rate</div>
+      </div>
+    </div>
+
+    <div class="days-container" id="days-container">
+      <!-- Days will be populated by JavaScript -->
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
