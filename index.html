@@ -4,11 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weekly Goal Tracker</title>
-    <link rel="stylesheet" href="style.css"></link>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <!-- iOS Safari PWA tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Daily Goals" />
+    <link rel="apple-touch-icon" href="Weekly Planner.png" />
+
+    <!-- Theme Color for Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#4caf50" />
   </head>
   <body>
     <h1>Daily Goals Tracker</h1>
-
     <div class="stats">
       <div class="stat-box">
         <div class="stat-value" id="total-goals">0</div>
@@ -22,8 +35,9 @@
         <div class="stat-value" id="completion-percentage">0%</div>
         <div class="stat-label">Completion Rate</div>
       </div>
+      <!-- Streak counter will be added via JavaScript -->
     </div>
-
+    <!-- Achievements section will be added via JavaScript -->
     <div class="days-container" id="days-container">
       <!-- Days will be populated by JavaScript -->
     </div>

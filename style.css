@@ -1,118 +1,290 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f5f5f5;
+  background-color: #121212;
+  color: #e0e0e0;
 }
-h1 {
+
+h1,
+h2 {
   text-align: center;
-  color: #333;
+  color: #4caf50;
+  letter-spacing: 1px;
 }
+
 .stats {
-  background-color: #fff;
+  background-color: #1e1e1e;
   border-radius: 8px;
   padding: 15px;
   margin-bottom: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
+
 .stat-box {
   text-align: center;
+  padding: 10px;
+  min-width: 80px;
 }
+
 .stat-value {
   font-size: 24px;
   font-weight: bold;
   color: #4caf50;
 }
+
 .stat-label {
   font-size: 14px;
-  color: #666;
+  color: #aaa;
 }
+
 .days-container {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
+
 .day {
-  background-color: #fff;
+  background-color: #1e1e1e;
   border-radius: 8px;
   padding: 15px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
 }
+
+.day:hover {
+  transform: translateY(-2px);
+}
+
 .day-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
 }
+
 .day-title {
   font-size: 18px;
   font-weight: bold;
-  color: #333;
+  color: #e0e0e0;
 }
+
 .day-progress {
   font-size: 14px;
-  color: #666;
+  color: #aaa;
 }
+
 .goal-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
+
 .goal-item {
   display: flex;
   align-items: center;
-  padding: 8px 0;
-  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+  border-bottom: 1px solid #333;
 }
+
 .goal-item:last-child {
   border-bottom: none;
 }
+
 .goal-checkbox {
   margin-right: 10px;
+  accent-color: #4caf50;
+  width: 18px;
+  height: 18px;
 }
+
 .goal-text {
   flex-grow: 1;
+  color: #e0e0e0;
+  transition: color 0.2s ease;
 }
+
 .completed {
   text-decoration: line-through;
-  color: #999;
+  color: #666;
 }
+
 .add-goal {
   display: flex;
-  margin-top: 10px;
+  margin-top: 12px;
 }
+
 .add-goal input {
   flex-grow: 1;
-  padding: 8px;
-  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: #2c2c2c;
+  border: 1px solid #333;
   border-radius: 4px;
   margin-right: 10px;
+  color: #e0e0e0;
 }
+
+.add-goal input::placeholder {
+  color: #666;
+}
+
 .add-goal button {
   background-color: #4caf50;
-  color: white;
+  color: #121212;
   border: none;
   border-radius: 4px;
-  padding: 8px 15px;
+  padding: 10px 15px;
   cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
 }
+
 .add-goal button:hover {
-  background-color: #45a049;
+  background-color: #5dbd61;
 }
+
 .delete-goal {
   color: #f44336;
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 16px;
-  padding: 0 5px;
+  font-size: 18px;
+  padding: 0 8px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
 }
+
 .delete-goal:hover {
-  color: #d32f2f;
+  opacity: 1;
 }
+
 .active-day {
   border-left: 4px solid #4caf50;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+}
+
+/* Achievements Styling */
+.achievements-section {
+  background-color: #1e1e1e;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.achievements-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.achievement {
+  display: flex;
+  align-items: center;
+  background-color: #2c2c2c;
+  border-radius: 6px;
+  padding: 12px;
+  transition: transform 0.2s ease;
+}
+
+.achievement:hover {
+  transform: translateY(-2px);
+}
+
+.achievement.achieved {
+  border-left: 4px solid #4caf50;
+}
+
+.achievement.locked {
+  border-left: 4px solid #666;
+  opacity: 0.7;
+}
+
+.achievement-icon {
+  font-size: 28px;
+  min-width: 50px;
+  text-align: center;
+}
+
+.achievement-info {
+  margin-left: 12px;
+}
+
+.achievement-title {
+  font-weight: bold;
+  margin-bottom: 3px;
+  color: #e0e0e0;
+}
+
+.achievement-description {
+  font-size: 13px;
+  color: #aaa;
+}
+
+/* Achievement Notification */
+.achievement-notification {
+  position: fixed;
+  bottom: -80px;
+  right: 20px;
+  background-color: #1e1e1e;
+  border-left: 4px solid #4caf50;
+  padding: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
+  z-index: 1000;
+  transition: bottom 0.5s ease;
+  max-width: 350px;
+}
+
+.achievement-notification.show {
+  bottom: 20px;
+}
+
+.notification-content {
+  display: flex;
+  align-items: center;
+}
+
+.notification-icon {
+  font-size: 32px;
+  margin-right: 15px;
+}
+
+.notification-title {
+  font-weight: bold;
+  color: #4caf50;
+  margin-bottom: 5px;
+}
+
+.notification-description {
+  font-size: 14px;
+  color: #e0e0e0;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .stat-box {
+    margin-bottom: 10px;
+  }
+}
+
+/* iOS PWA Splash Screen */
+@media screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  :root {
+    height: 100%;
+    background-color: #1e1e1e;
+    background-image: url("/icons/icon-512x512.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30%;
+  }
 }
