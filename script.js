@@ -290,3 +290,30 @@ if ("serviceWorker" in navigator) {
       });
   });
 }
+
+// Prevent zooming on double-tap (iOS)
+document.addEventListener(
+  "dblclick",
+  function (e) {
+    e.preventDefault();
+  },
+  { passive: false }
+);
+
+// Prevent zooming on pinch gestures
+document.addEventListener("gesturestart", function (e) {
+  e.preventDefault();
+});
+
+// Prevent scrolling when touching certain elements
+document
+  .querySelectorAll("input, textarea, [contenteditable]")
+  .forEach((el) => {
+    el.addEventListener("touchstart", function () {
+      document.documentElement.style.overflow = "hidden";
+    });
+
+    el.addEventListener("touchend", function () {
+      document.documentElement.style.overflow = "";
+    });
+  });

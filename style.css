@@ -7,6 +7,32 @@ body {
   color: #e0e0e0;
 }
 
+/* Prevent side-scrolling and overscroll behavior */
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  touch-action: manipulation;
+}
+
+/* Prevent text size adjustment on orientation change */
+body {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Disable double-tap zoom on iOS */
+* {
+  touch-action: manipulation;
+}
+
+/* Prevent elastic scrolling on iOS */
+body {
+  overscroll-behavior: none;
+}
+
 h1,
 h2 {
   text-align: center;
@@ -286,5 +312,22 @@ h2 {
     background-position: center;
     background-repeat: no-repeat;
     background-size: 30%;
+  }
+}
+
+/* Improve form element behavior on mobile */
+input,
+textarea,
+select {
+  font-size: 16px; /* Prevent iOS zooming on focus */
+  touch-action: manipulation;
+}
+
+/* Prevent zoom when focusing input on iOS */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
   }
 }
